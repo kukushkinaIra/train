@@ -22,7 +22,6 @@ Route::get('/home', function () {
 });
 
 Route::post('/home/form', function () {
-//    return Request::all();
-    return 'Hello';
+    dd(Request::all());
 })->name('form');
 
