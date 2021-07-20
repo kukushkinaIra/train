@@ -24,7 +24,22 @@ class FormRequest1 extends FormRequest
     public function rules()
     {
         return [
-                'email' => 'required|min:30'
+                'email' => 'required|email|min:10',
+                'password' => 'required'
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'email' => 'e-mail address'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'password.required' => 'Введите пароль'
         ];
     }
 }
