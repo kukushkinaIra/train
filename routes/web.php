@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,5 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::post('/home/form', function () {
-    dd(Request::all());
-})->name('form');
+Route::post('/home/form', [FormController::class, 'submit'])->name('form');
 
