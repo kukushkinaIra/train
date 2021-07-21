@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/thanks', [FormController::class, 'thanks'])->name('thanks');
+
+Route::get('/home', [FormController::class, 'home'])->name('home');
 
 Route::post('/home/form', [FormController::class, 'submit'])->name('form');
 
